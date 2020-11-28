@@ -81,6 +81,28 @@ void GRAPHisSource(Graph G) {
     isSource[v] ? printf("[%d]: TRUE\n", v) : printf("[%d]: FALSE\n", v);
 }
 
+int GRAPHindeg(Graph G, vertex w) {
+  vertex v;
+  int count = 0;
+
+  for (v = 0; v < G->V; v++)
+    if (G->adj[v][w])
+      count++;
+  
+  return count;
+}
+
+int GRAPHoutdeg(Graph G, vertex v) {
+  vertex w;
+  int count = 0;
+
+  for (w = 0; w < G->V; w++)
+    if (G->adj[v][w])
+      count++;
+  
+  return count;
+}
+
 void GRAPHshow(Graph G) {
   vertex v, w;
 
