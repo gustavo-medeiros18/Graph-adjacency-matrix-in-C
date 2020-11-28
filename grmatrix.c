@@ -29,6 +29,16 @@ Graph GRAPHinit(int V) {
   return G;
 }
 
+Graph GRAPHbuildPath(int V) {
+  Graph G = GRAPHinit(V);
+  int v;
+
+  for (v = 0; v < V - 1; v++)
+    GRAPHinsertArc(G, v, v + 1);
+  
+  return G;
+}
+
 void GRAPHinsertArc(Graph G, vertex v, vertex w) {
   if (!G->adj[v][w]) {
     G->adj[v][w] = 1;
