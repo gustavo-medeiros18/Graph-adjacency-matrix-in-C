@@ -54,12 +54,31 @@ void GRAPHisSink(Graph G) {
     for (w = 0; w < G->V; w++)
       if (G->adj[v][w]) {
         isSink[v] = false;
-        
+
         break;
       }
 
   for (v = 0; v < G->V; v++)
     isSink[v] ? printf("[%d]: TRUE\n", v) : printf("[%d]: FALSE\n", v);
+}
+
+void GRAPHisSource(Graph G) {
+  vertex v, w;
+  bool *isSource = calloc(G->V, sizeof(bool));
+
+  for (v = 0; v < G->V; v++)
+    isSource[v] = true;
+
+  for (w = 0; w < G->V; w++)
+    for (v = 0; v < G->V; v++)
+      if (G->adj[v][w]) {
+        isSource[w] = false;
+
+        break;
+      }
+  
+  for (v = 0; v < G->V; v++)
+    isSource[v] ? printf("[%d]: TRUE\n", v) : printf("[%d]: FALSE\n", v);
 }
 
 void GRAPHshow(Graph G) {

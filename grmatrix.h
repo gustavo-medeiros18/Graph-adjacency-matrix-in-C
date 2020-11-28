@@ -10,4 +10,5 @@ Graph GRAPHinit(int V);
 void GRAPHinsertArc(Graph G, vertex v, vertex w);
 void GRAPHremoveArc(Graph G, vertex v, vertex w);
 void GRAPHisSink(Graph G);
+void GRAPHisSource(Graph G);
 void GRAPHshow(Graph G);
