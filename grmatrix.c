@@ -43,6 +43,25 @@ void GRAPHremoveArc(Graph G, vertex v, vertex w) {
   }
 }
 
+void GRAPHisSink(Graph G) {
+  vertex v, w;
+  bool *isSink = calloc(G->V, sizeof(bool));
+
+  for (v = 0; v < G->V; v++)
+    isSink[v] = true;
+
+  for (v = 0; v < G->V; v++)
+    for (w = 0; w < G->V; w++)
+      if (G->adj[v][w]) {
+        isSink[v] = false;
+        
+        break;
+      }
+
+  for (v = 0; v < G->V; v++)
+    isSink[v] ? printf("[%d]: TRUE\n", v) : printf("[%d]: FALSE\n", v);
+}
+
 void GRAPHshow(Graph G) {
   vertex v, w;
 
