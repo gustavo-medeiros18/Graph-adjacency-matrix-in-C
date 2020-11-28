@@ -14,4 +14,5 @@ void GRAPHisSource(Graph G);
 int GRAPHindeg(Graph G, vertex w);
 int GRAPHoutdeg(Graph G, vertex v);
 bool GRAPHisUndirected(Graph G);
+int *UGRAPHdegrees(Graph G);
 void GRAPHshow(Graph G);

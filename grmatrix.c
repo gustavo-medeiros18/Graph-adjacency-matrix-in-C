@@ -115,6 +115,23 @@ bool GRAPHisUndirected(Graph G) {
   return true;
 }
 
+int *UGRAPHdegrees(Graph G) {
+  vertex v, w;
+  int *degs = calloc(G->V, sizeof(int));
+
+  if (GRAPHisUndirected(G)) {
+    for (v = 0; v < G->V; v++)
+      degs[v] = 0;
+
+    for (v = 0; v < G->V; v++)
+      for (w = 0; w < G->V; w++)
+        if (G->adj[v][w])
+          degs[v]++;
+
+    return degs;
+  }
+}
+
 void GRAPHshow(Graph G) {
   vertex v, w;
 
