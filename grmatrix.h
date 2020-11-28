@@ -13,4 +13,5 @@ void GRAPHisSink(Graph G);
 void GRAPHisSource(Graph G);
 int GRAPHindeg(Graph G, vertex w);
 int GRAPHoutdeg(Graph G, vertex v);
+bool GRAPHisUndirected(Graph G);
 void GRAPHshow(Graph G);

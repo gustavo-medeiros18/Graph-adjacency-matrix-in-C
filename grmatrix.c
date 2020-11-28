@@ -103,6 +103,18 @@ int GRAPHoutdeg(Graph G, vertex v) {
   return count;
 }
 
+bool GRAPHisUndirected(Graph G) {
+  vertex v, w;
+
+  for (v = 0; v < G->V; v++)
+    for (w = 0; w < G->V; w++)
+      if (G->adj[v][w])
+        if (!G->adj[w][v])
+          return false;
+  
+  return true;
+}
+
 void GRAPHshow(Graph G) {
   vertex v, w;
 
