@@ -15,5 +15,6 @@ void GRAPHisSource(Graph G);
 int GRAPHindeg(Graph G, vertex w);
 int GRAPHoutdeg(Graph G, vertex v);
 bool GRAPHisUndirected(Graph G);
+bool GRAPHcheckWalk(Graph G, int seq[], int n);
 int *UGRAPHdegrees(Graph G);
 void GRAPHshow(Graph G);

@@ -121,7 +121,17 @@ bool GRAPHisUndirected(Graph G) {
       if (G->adj[v][w])
         if (!G->adj[w][v])
           return false;
-  
+
+  return true;
+}
+
+bool GRAPHcheckWalk(Graph G, int seq[], int n) {
+  int i;
+
+  for (i = 0; i < n - 1; i++)
+    if (!G->adj[seq[i]][seq[i + 1]])
+      return false;
+
   return true;
 }
 
